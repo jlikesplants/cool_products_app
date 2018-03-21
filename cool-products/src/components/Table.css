@@ -1,0 +1,20 @@
+.Table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+  width: 100%;
+  background-color: white;
+}
+
+tbody td {
+  border: solid 1px #e4e4e4;
+  color: #333;
+  padding: 10px;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+
