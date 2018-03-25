@@ -10,7 +10,9 @@ To improve performance when reading the CSV, Cool Products uses the gem [smarter
 
 To improve performance when inserting the record, Cool Products brings in the gem [activerecord-import](https://github.com/zdennis/activerecord-import). Instead of processing an insert for each new row in the CSV, I've used activerecord-import's strategy of batch inserts- building an array of new db objects, then running just one insert for the batch. In testing this app, I found that activerecord-import inserted the new seeds almost 2.5x faster than built in Active Record methods.
 
-Tests can be run with `rails test`.
+One downside to using activerecord-import with SQLite3 is that batch validation is not supported. For the purposes of seeding, I've checked that products and advertiser names are not duplicated before creating new Product and advertiser objects to pass to the import batch.
+
+Tests can be run with `rake test`.
 
 ## Full-stack Developer Assignment
 **Frontend**
