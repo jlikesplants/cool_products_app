@@ -1,3 +1,17 @@
+## Cool Products
+Rails & React app that can be seeded with a CSV. To run the app:
+
+1. Bundle to install dependencies
+2. Run seed importer task with `rake import:csv\['filepath'\]`
+3. Start Rails app with `rails s -p 3001`
+4. Start React app with `npm start -p 3000`
+
+To improve performance when reading the CSV, Cool Products uses the gem [smarter_csv](https://github.com/tilo/smarter_csv).
+
+To improve performance when inserting the record, Cool Products brings in the gem [activerecord-import](https://github.com/zdennis/activerecord-import). Instead of processing an insert for each new row in the CSV, I've used activerecord-import's strategy of batch inserts- building an array of new db objects, then running just one insert for the batch. In testing this app, I found that activerecord-import inserted the new seeds almost 2.5x faster than built in Active Record methods.
+
+Tests can be run with `rails test`.
+
 ## Full-stack Developer Assignment
 **Frontend**
 
@@ -18,3 +32,5 @@ The ID, name and SKU should be unique for each product. We have created a seed f
 Additional Instructions
 
 - include tests
+
+- run backend on post 3001 and front end on 3000
