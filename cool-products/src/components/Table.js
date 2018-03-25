@@ -25,9 +25,9 @@ class Table extends Component {
           <tbody>
             {this.state.products.map((product) => 
               <tr key={product.id}>
-                <td>{product.name}</td>
+                <td>{product.product_name}</td>
                 <td>{product.sku}</td>
-                <td>{product.advertiser_id}</td>
+                <td>{product.advertiser_name}</td>
               </tr>
             )}
           </tbody>
