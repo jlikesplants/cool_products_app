@@ -2,9 +2,10 @@
 Rails & React app that can be seeded with a CSV. To run the app:
 
 1. Bundle to install dependencies
-2. Run seed importer task with `rake import:csv\['filepath'\]`
-3. Start Rails app with `rails s -p 3001`
-4. Start React app with `npm start -p 3000`
+2. Migrate database with `rails db:migrate`
+3. Run seed importer task with `rake import:csv\['filepath'\]`
+4. Start Rails app with `rails s -p 3001`
+5. Start React app with `npm start -p 3000` and visit http://localhost:3000
 
 To improve performance when reading the CSV, Cool Products uses the gem [smarter_csv](https://github.com/tilo/smarter_csv).
 
